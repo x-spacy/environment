@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  Unit:
+    name: Test unit package
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Setup package manager
+      uses: pnpm/action-setup@v4
+      with:
+        version: 8
+
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+    - name: Test package
+      run: pnpm test:coverage

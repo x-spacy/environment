@@ -1,0 +1,50 @@
+{
+  "name": "@x-spacy/environment",
+  "version": "0.0.0",
+  "description": "Environment module used by X-Spacy.",
+  "license": "MIT",
+  "private": false,
+  "main": "dist/index.js",
+  "types": "@types/index.d.ts",
+  "type": "module",
+  "author": {
+    "name": "Vinícius Gutierrez da Silva Rocha",
+    "email": "srgutyerrez@gmail.com",
+    "url": "https://github.com/gutyerrez"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x-spacy/environment.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public",
+    "tag": "latest"
+  },
+  "engines": {
+    "node": "v20.x.x"
+  },
+  "scripts": {
+    "build": "sh scripts/build.sh",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "@x-spacy/exceptions": "^1.1.1",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.6",
+    "@babel/core": "^7.24.6",
+    "@babel/preset-env": "^7.24.6",
+    "@babel/preset-typescript": "^7.24.6",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.12",
+    "@x-spacy/eslint-config": "^1.7.1",
+    "eslint": "^9.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

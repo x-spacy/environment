@@ -1,0 +1,15 @@
+.github/
+
+node_modules/
+scripts/
+src/
+
+.editorconfig
+.gitignore
+
+babel.config.json
+eslint.config.mjs
+
+pnpm-lock.yaml
+
+tsconfig.json
