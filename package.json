@@ -4,7 +4,7 @@
   "description": "Environment module used by X-Spacy.",
   "license": "MIT",
   "private": false,
-  "main": "dist/index.js",
+  "main": "dist/environment/implementations/Environment.js",
   "types": "@types/index.d.ts",
   "author": {
     "name": "Vinícius Gutierrez da Silva Rocha",
@@ -45,5 +45,10 @@
     "eslint": "^9.3.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
+  },
+  "exports": {
+    ".": "./dist/environment/implementations/Environment.js",
+    "./environment/implementations/Environment": "./dist/environment/implementations/Environment.js",
+    "./exceptions/EnvironmentNotFoundException": "./dist/exceptions/EnvironmentNotFoundException.js"
   }
 }
