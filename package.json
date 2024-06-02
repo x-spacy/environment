@@ -6,7 +6,6 @@
   "private": false,
   "main": "dist/index.js",
   "types": "@types/index.d.ts",
-  "type": "module",
   "author": {
     "name": "Vinícius Gutierrez da Silva Rocha",
     "email": "srgutyerrez@gmail.com",
