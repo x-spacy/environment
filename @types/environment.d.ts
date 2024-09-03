@@ -45,5 +45,12 @@ declare module '@x-spacy/environment' {
      * @param file string
      */
     public static set environmentFile(file: string): void
+
+    /**
+     * Get the current working directory.
+     *
+     * @returns {string}
+     */
+    public static get workingDirectory(): string
   }
 }

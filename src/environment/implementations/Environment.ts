@@ -105,4 +105,8 @@ export class Environment {
   public static set environmentFile(file: string) {
     Environment.ENVIRONMENT_FILE = file;
   }
+
+  public static get workingDirectory(): string {
+    return process.cwd();
+  }
 }
