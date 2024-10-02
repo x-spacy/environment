@@ -58,7 +58,7 @@ export class Environment {
     const value = Environment.getStringOrNull(key);
 
     if (value == null || value == undefined) {
-      throw new EnvironmentNotFoundException();
+      throw new EnvironmentNotFoundException(key);
     }
 
     return String(value);
@@ -78,7 +78,7 @@ export class Environment {
     const value = Environment.getIntOrNull(key);
 
     if (value == null || value == undefined) {
-      throw new EnvironmentNotFoundException();
+      throw new EnvironmentNotFoundException(key);
     }
 
     return Number(value);
