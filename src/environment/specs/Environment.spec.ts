@@ -1,8 +1,8 @@
-import { Environment } from '@x-spacy/environment/environment/implementations/Environment';
+import { existsSync, readFileSync } from 'node:fs';
 
 import { EnvironmentNotFoundException } from '@x-spacy/environment/exceptions/EnvironmentNotFoundException';
 
-import { existsSync, readFileSync } from 'node:fs';
+import { Environment } from '@x-spacy/environment/environment/implementations/Environment';
 
 jest.mock('node:fs', () => ({
   existsSync: jest.fn().mockReturnValue(true),
@@ -51,21 +51,17 @@ describe('Environment', () => {
   });
 
   test('should skips lines with empty strings, newline characters, and lines starting with #', () => {
-    const comments = Object.values(process.env).some(
-      it => it?.startsWith('#')
-    );
+    const comments = Object.values(process.env).some(it => it?.startsWith('#'));
 
     expect(comments).toBeFalsy();
   });
 
   test('should handle environment variables with interpolation', () => {
-    (readFileSync as jest.Mock).mockReturnValue(
-      'HOST=0.0.0.0' +
+    (readFileSync as jest.Mock).mockReturnValue('HOST=0.0.0.0' +
       '\n' +
       'PORT=3333' +
       '\n' +
-      'APP_URL=http://\${HOST}:\${PORT}'
-    );
+      'APP_URL=http://\${HOST}:\${PORT}');
 
     expect(Environment.getString('HOST')).toBe('0.0.0.0');
     expect(Environment.getString('PORT')).toBe('3333');

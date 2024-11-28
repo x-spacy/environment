@@ -1,9 +1,11 @@
-import { EnvironmentNotFoundException } from '@x-spacy/environment/exceptions/EnvironmentNotFoundException';
-
 import { existsSync, readFileSync } from 'node:fs';
+
+import { EnvironmentNotFoundException } from '@x-spacy/environment/exceptions/EnvironmentNotFoundException';
 
 export class Environment {
   private static ENVIRONMENT_FILE = `${process.cwd()}/.env`;
+
+  private static LINE = /(?:^|^)\s*(?:export\s+)?([\w.-]+)(?:\s*=\s*?|:\s+?)(\s*'(?:\\'|[^'])*'|\s*"(?:\\"|[^"])*"|\s*`(?:\\`|[^`])*`|[^#\r\n]+)?\s*(?:#.*)?(?:$|$)/mg;
 
   private static readEnvironmentFile(): NodeJS.ProcessEnv {
     if (typeof window !== 'undefined') {
@@ -14,7 +16,28 @@ export class Environment {
       return process.env;
     }
 
-    const lines = readFileSync(Environment.ENVIRONMENT_FILE).toString().split(/\n/);
+    const content = readFileSync(Environment.ENVIRONMENT_FILE, 'utf-8').replace(/\r\n?/mg, '\n');
+
+    const lines = new Array<string>();
+
+    let match;
+
+    while ((match = Environment.LINE.exec(content)) !== null) {
+      const key = match[1];
+
+      let value = (match[2] ?? '').trim();
+
+      value = value.replace(/^(['"`])([\s\S]*)\1$/mg, '$2');
+
+      const maybeQuote = value[0];
+
+      if (maybeQuote === '"') {
+        value = value.replace(/\\n/g, '\n')
+        value = value.replace(/\\r/g, '\r')
+      }
+
+      lines.push(`${key}=${value}`);
+    }
 
     for (const line of lines) {
       if (/(^$|\n|\#)/.test(line)) {
