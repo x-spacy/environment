@@ -73,7 +73,7 @@ export class Environment {
     return process.env;
   }
 
-  public static get(key: string): string | undefined {
+  public static get(key: string): string | null | undefined {
     return Environment.readEnvironmentFile()[key];
   }
 
@@ -87,7 +87,7 @@ export class Environment {
     return String(value);
   }
 
-  public static getStringOrNull(key: string): string | null {
+  public static getStringOrNull(key: string): string | null | undefined {
     const value = Environment.get(key);
 
     if (value == null || value == undefined) {
@@ -107,7 +107,7 @@ export class Environment {
     return Number(value);
   }
 
-  public static getIntOrNull(key: string): number | null {
+  public static getIntOrNull(key: string): number | null | undefined {
     const value = Environment.get(key);
 
     if (value == null || value == undefined) {

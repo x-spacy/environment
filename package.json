@@ -21,7 +21,7 @@
     "tag": "latest"
   },
   "engines": {
-    "node": "v20.x.x"
+    "node": "v22.18.0"
   },
   "scripts": {
     "build": "sh scripts/build.sh",
@@ -32,18 +32,18 @@
   "dependencies": {
     "@x-spacy/exceptions": "^1.4.2",
     "jest": "^29.7.0",
-    "ts-jest": "^29.2.5"
+    "ts-jest": "^29.4.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.25.9",
-    "@babel/core": "^7.26.0",
-    "@babel/preset-env": "^7.26.0",
-    "@babel/preset-typescript": "^7.26.0",
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-typescript": "^7.27.1",
     "@types/jest": "^29.5.14",
-    "@types/node": "^20.17.8",
-    "@x-spacy/eslint-config": "^1.26.8",
-    "eslint": "^9.14.0",
-    "typescript": "^5.7.2"
+    "@types/node": "^20.19.10",
+    "@x-spacy/eslint-config": "^1.32.0",
+    "eslint": "^9.33.0",
+    "typescript": "^5.9.2"
   },
   "exports": {
     ".": "./dist/environment/implementations/Environment.js",

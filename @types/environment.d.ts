@@ -14,7 +14,7 @@ declare module '@x-spacy/environment' {
      * @param key string
      * @returns {string | null}
      */
-    public static getStringOrNull(key: string): string | null
+    public static getStringOrNull(key: string): string | null | undefined
 
     /**
      * Get a number value from environment variables.
@@ -30,7 +30,7 @@ declare module '@x-spacy/environment' {
      * @param key string
      * @returns {number | null}
      */
-    public static getIntOrNull(key: string): number | null
+    public static getIntOrNull(key: string): number | null | undefined
 
     /**
      * Get a boolean value indicating if the environment is a test environment.
