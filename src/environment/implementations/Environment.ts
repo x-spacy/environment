@@ -32,8 +32,8 @@ export class Environment {
       const maybeQuote = value[0];
 
       if (maybeQuote === '"') {
-        value = value.replace(/\\n/g, '\n')
-        value = value.replace(/\\r/g, '\r')
+        value = value.replace(/\\n/g, '\n');
+        value = value.replace(/\\r/g, '\r');
       }
 
       lines.push(`${key}=${value}`);

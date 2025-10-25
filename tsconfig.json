@@ -4,10 +4,11 @@
     "module": "CommonJS",
 
     "outDir": "dist",
-    "baseUrl": "src",
 
     "paths": {
-      "@x-spacy/environment/*": [ "*" ]
+      "@x-spacy/environment/*": [
+        "./src/*"
+      ]
     },
 
     "strict": true,
@@ -25,8 +26,8 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "src/**/*",
     "@types/**/*",
+    "src/**/*",
     "jest.config.ts"
   ],
   "exclude": [
