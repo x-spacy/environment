@@ -1,3 +1,8 @@
 import config from '@x-spacy/eslint-config';
 
-export default config;
+export default [
+  ...config,
+  {
+    ignores: ['dist/**/*']
+  }
+];

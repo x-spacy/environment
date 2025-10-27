@@ -14,7 +14,7 @@ declare module '@x-spacy/environment' {
      * @param key string
      * @returns {string | null}
      */
-    public static getStringOrNull(key: string): string | null | undefined
+    public static getStringOrNull(key: string): string | null
 
     /**
      * Get a number value from environment variables.
@@ -30,7 +30,7 @@ declare module '@x-spacy/environment' {
      * @param key string
      * @returns {number | null}
      */
-    public static getIntOrNull(key: string): number | null | undefined
+    public static getIntOrNull(key: string): number | null
 
     /**
      * Get a boolean value indicating if the environment is a test environment.
@@ -40,11 +40,18 @@ declare module '@x-spacy/environment' {
     public static get isTestEnvironment(): boolean
 
     /**
+     * Get the current environment file path.
+     *
+     * @returns {string}
+     */
+    public static get environmentFile(): string
+
+    /**
      * Change the path containing the environment file to be read.
      * 
      * @param file string
      */
-    public static set environmentFile(file: string): void
+    public static set environmentFile(file: string)
 
     /**
      * Get the current working directory.

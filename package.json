@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": false,
   "main": "dist/environment/implementations/Environment.js",
-  "types": "@types/index.d.ts",
+  "types": "dist/index.d.ts",
   "author": {
     "name": "Vinícius Gutierrez da Silva Rocha",
     "email": "srgutyerrez@gmail.com",
