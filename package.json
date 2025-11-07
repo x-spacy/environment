@@ -40,9 +40,9 @@
     "@babel/preset-env": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
     "@types/jest": "^29.5.14",
-    "@types/node": "^20.19.23",
+    "@types/node": "^20.19.24",
     "@x-spacy/eslint-config": "^1.35.0",
-    "eslint": "^9.38.0",
+    "eslint": "^9.39.1",
     "typescript": "^5.9.3"
   },
   "exports": {

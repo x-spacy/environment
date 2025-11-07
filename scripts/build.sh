@@ -7,5 +7,4 @@ rm -rf dist > /dev/null
 babel src -d dist --extensions .ts
 
 # copy type definitions
-cp @types/index.d.ts dist/index.d.ts
-cp @types/environment.d.ts dist/environment.d.ts
+cp -r @types dist

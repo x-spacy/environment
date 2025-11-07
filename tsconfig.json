@@ -1,16 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES2023",
     "module": "CommonJS",
-
     "outDir": "dist",
-
     "paths": {
       "@x-spacy/environment/*": [
         "./src/*"
       ]
     },
-
     "strict": true,
     "skipLibCheck": true,
     "removeComments": true,
@@ -32,6 +29,7 @@
   ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "**/*.spec.ts"
   ]
 }

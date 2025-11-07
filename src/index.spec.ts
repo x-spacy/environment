@@ -2,19 +2,17 @@ import { existsSync, readFileSync } from 'node:fs';
 
 import { EnvironmentNotFoundException } from '@x-spacy/environment/exceptions/EnvironmentNotFoundException';
 
-import { Environment } from '@x-spacy/environment/environment/implementations/Environment';
+import { Environment } from '.';
 
 jest.mock('node:fs', () => ({
   existsSync: jest.fn().mockReturnValue(true),
-  readFileSync: jest.fn().mockReturnValue(
-    'NODE_ENV=test' +
+  readFileSync: jest.fn().mockReturnValue('NODE_ENV=test' +
     '\n' +
     '# Comment' +
     '\n' +
     'PORT=3333' +
     '\n' +
-    'HOST=0.0.0.0:${PORT}'
-  )
+    'HOST=0.0.0.0:${PORT}')
 }));
 
 describe('Environment', () => {
