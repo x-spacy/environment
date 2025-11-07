@@ -24,8 +24,7 @@
   },
   "include": [
     "@types/**/*",
-    "src/**/*",
-    "jest.config.ts"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",
