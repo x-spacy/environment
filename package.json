@@ -4,7 +4,7 @@
   "description": "Environment module used by X-Spacy.",
   "license": "MIT",
   "private": false,
-  "main": "dist/environment/implementations/Environment.js",
+  "main": "dist/index.js",
   "types": "@types/index.d.ts",
   "author": {
     "name": "Vinícius Gutierrez da Silva Rocha",
@@ -24,9 +24,10 @@
     "node": "v22.18.0"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "nest build"
   },
   "dependencies": {
+    "@nestjs/cli": "^11.0.10",
     "@x-spacy/exceptions": "^1.4.2"
   },
   "devDependencies": {
